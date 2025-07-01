@@ -14,8 +14,8 @@ With the rapidly growing second-hand car market, it's important to estimate a fa
 ## 🗂 Dataset
 
 - 📌 **Source:** [Car Price Prediction Dataset on Kaggle](https://www.kaggle.com/datasets/sukhmandeepsinghbrar/car-price-prediction-dataset)
-- 💾 **Rows:** 8,000+  
-- 🧾 **Features Used:**  
+- 💾 **Rows:** 8,000+
+- 🧾 **Features Used:**
   - `brand`, `fuel`, `transmission`, `owner`
   - `year`, `km_driven`, `mileage`, `engine`, `max_power`, `seats`
   - `seller_type`, and more (after encoding)
@@ -46,11 +46,11 @@ With the rapidly growing second-hand car market, it's important to estimate a fa
 
 ## 🏆 Model Performance
 
-| Model               | Test R² Score | Notes                     |
-|--------------------|---------------|---------------------------|
-| Linear Regression   | ~0.78         | Simple but underfit       |
-| Decision Tree       | ~0.81         | Slight overfitting        |
-| **Random Forest**   | **~0.89**     | ✅ Best performer (final)  |
+| Model             | Test R² Score | Notes                     |
+| ----------------- | ------------- | ------------------------- |
+| Linear Regression | ~0.78         | Simple but underfit       |
+| Decision Tree     | ~0.81         | Slight overfitting        |
+| **Random Forest** | **~0.89**     | ✅ Best performer (final) |
 
 - Final model saved using `pickle`
 
@@ -73,6 +73,7 @@ The trained model was integrated into a **Flask web application**, allowing user
 ---
 
 ## 📌 Future Improvements
+
 - Add Streamlit version for easier UI
 
 - Deploy on Render/Heroku/Vercel for public access
@@ -85,10 +86,10 @@ The trained model was integrated into a **Flask web application**, allowing user
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/old-car-price-estimator
+git clone https://github.com/IAmHarshit0/OldCarPriceEstimator.git
 
 # Navigate into the folder
-cd old-car-price-estimator
+cd OldCarPriceEstimator
 
 # Install dependencies
 pip install -r requirements.txt
@@ -98,3 +99,4 @@ cd Server
 
 # Run the app
 python server.py
+```
