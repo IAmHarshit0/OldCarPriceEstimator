@@ -30,15 +30,26 @@ def estimated_price(brand, fuel, transmission, owner, seller, year, km, mileage,
     a[4] = max_bhp
     a[5] = seats
 
-    if a[brand_index] >= 0:
+    # if a[brand_index] >= 0:
+    #     a[brand_index] = 1
+    # if a[fuel_index] >= 0:
+    #     a[fuel_index] = 1
+    # if a[transmission_index] >= 0:
+    #     a[transmission_index] = 1
+    # if a[owner_index] >= 0:
+    #     a[owner_index] = 1
+    # if a[seller_index]  >= 0:
+    #     a[seller_index] = 1
+
+    if brand_index >= 0:
         a[brand_index] = 1
-    if a[fuel_index] >= 0:
+    if fuel_index >= 0:
         a[fuel_index] = 1
-    if a[transmission_index] >= 0:
+    if transmission_index >= 0:
         a[transmission_index] = 1
-    if a[owner_index] >= 0:
+    if owner_index >= 0:
         a[owner_index] = 1
-    if a[seller_index]  >= 0:
+    if seller_index >= 0:
         a[seller_index] = 1
 
     return round(__model.predict([a])[0], 2)
@@ -68,7 +79,13 @@ def load_saved_artifacts():
     global __seller
     global __model
 
-    with open(r"C:\Users\iamha\OneDrive\Documents\OldCar\Server\Artifacts\Columns.json", 'r') as f:
+    import os
+
+    base_path = os.path.dirname(__file__)  # this gets the path of the util.py file
+    columns_path = os.path.join(base_path, "Artifacts", "Columns.json")
+    model_path = os.path.join(base_path, "Artifacts", "Old_Car.pickle")
+
+    with open(columns_path, 'r') as f:
         __data_columns = json.load(f)['data_columns']
         __brand = __data_columns[20:]
         __fuel = __data_columns[6:10]
@@ -76,9 +93,21 @@ def load_saved_artifacts():
         __owner = __data_columns[15:20]
         __seller = __data_columns[10:13]
 
-    with open(r"C:\Users\iamha\OneDrive\Documents\OldCar\Server\Artifacts\Old_Car.pickle", 'rb') as f:
+    with open(model_path, 'rb') as f:
         __model = pickle.load(f)
-    print("Loading Saved Artifacts... Completed")
+
+
+    # with open(r"C:\Users\iamha\OneDrive\Documents\OldCar\Server\Artifacts\Columns.json", 'r') as f:
+    #     __data_columns = json.load(f)['data_columns']
+    #     __brand = __data_columns[20:]
+    #     __fuel = __data_columns[6:10]
+    #     __transmission = __data_columns[13:15]
+    #     __owner = __data_columns[15:20]
+    #     __seller = __data_columns[10:13]
+
+    # with open(r"C:\Users\iamha\OneDrive\Documents\OldCar\Server\Artifacts\Old_Car.pickle", 'rb') as f:
+    #     __model = pickle.load(f)
+    # print("Loading Saved Artifacts... Completed")
 
 if __name__ == "__main__":
     load_saved_artifacts()
