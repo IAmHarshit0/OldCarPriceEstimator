@@ -67,7 +67,6 @@ pydantic==2.11.7
 pydantic_core==2.33.2
 pyparsing==3.2.3
 pytz==2025.2
-pywin32==307
 PyYAML==6.0.2
 requests==2.32.4
 rich==14.0.0
