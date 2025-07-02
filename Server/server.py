@@ -1,7 +1,11 @@
-from flask import Flask, request, jsonify
-import util
+from flask import Flask, request, jsonify, render_template
+from . import util
 
 app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template('app.html')
 
 @app.route('/get_brand_names')
 def get_brand_names():
