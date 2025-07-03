@@ -1,7 +1,7 @@
 function onPageLoad() {
   console.log("Document Loaded");
-  // var url = "http://127.0.0.1:5000/get_brand_names";
-  var url = "/api/get_brand_names";
+  var url = "http://127.0.0.1:5000/get_brand_names";
+  // var url = "/api/get_brand_names";
   $.get(url, function (data, status) {
     console.log("Got Response For get_brand_names Request");
     if (data) {
@@ -71,8 +71,8 @@ function onClickEstimatePrice() {
   var seats = document.getElementById("uiseat");
   var estprice = document.getElementById("uiestimateprice");
 
-  // var url = "http://127.0.0.1:5000/predict_car_price";
-  var url = "/api/predict_car_price";
+  var url = "http://127.0.0.1:5000/predict_car_price";
+  // var url = "/api/predict_car_price";
   $.post(
     url,
     {
