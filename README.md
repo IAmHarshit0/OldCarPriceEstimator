@@ -76,8 +76,6 @@ The trained model was integrated into a **Flask web application**, allowing user
 
 - Add Streamlit version for easier UI
 
-- Deploy on Render/Heroku/Vercel for public access
-
 - Integrate scraping for live car listings
 
 ---
