@@ -28,7 +28,6 @@ With the rapidly growing second-hand car market, it's important to estimate a fa
 - `max_power`, `engine`, and `mileage` cleaned and converted to numerical formats
 - One-Hot Encoding applied to categorical features
 - Outliers detected using distribution plots and removed for key numeric columns
-- Final feature matrix was scaled for certain models
 
 ---
 
@@ -68,7 +67,7 @@ The trained model was integrated into a **Flask web application**, allowing user
 - Max Power
 - Year, Ownership, Seats, etc.
 
-➡️ On submit, the app returns a **predicted price** instantly using the trained model.
+➡️ By clicking on Estimate Price, the app returns a **predicted price** instantly using the trained model.
 
 ---
 
